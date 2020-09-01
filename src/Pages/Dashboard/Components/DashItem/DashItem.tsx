@@ -15,6 +15,10 @@ const ContainerName = styled.div`
   display: flex;
   flex: 0.4;
 `;
+
+const Name = styled.h4`
+  color: #3e4157;
+`;
 const ContainerItem = styled.div`
   display: flex;
   flex: 0.6;
@@ -25,6 +29,10 @@ const Item = styled.div`
   width: 100px;
   display: flex;
   justify-content: center;
+`;
+
+const Text = styled.span`
+  color: #3e4157;
 `;
 
 export interface Card {
@@ -52,17 +60,17 @@ const DashItem: React.FC<Card> = (props) => {
   return (
     <Container>
       <ContainerName>
-        <h4>{props?.name}</h4>
+        <Name>{props?.name}</Name>
       </ContainerName>
       <ContainerItem>
         <Item>
-          <span>{props?.recipients}</span>
+          <Text>{props?.recipients}</Text>
         </Item>
         <Item>
-          <span>{props?.success}</span>
+          <Text>{props?.success}</Text>
         </Item>
         <Item>
-          <span>{statusItem()}</span>
+          <Text>{statusItem()}</Text>
         </Item>
       </ContainerItem>
     </Container>
