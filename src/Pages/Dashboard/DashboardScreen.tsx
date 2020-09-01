@@ -1,8 +1,13 @@
 import React, { useEffect, useState, useCallback } from "react";
 import styled from "styled-components";
 import Navbar from "../../Components/NavBar";
-import AccessAlarmIcon from "@material-ui/icons/AccessAlarm";
 import DashItem, { Card } from "./Components/DashItem/DashItem";
+import BorderAllOutlinedIcon from "@material-ui/icons/BorderAllOutlined";
+import SendOutlinedIcon from "@material-ui/icons/SendOutlined";
+import PlayCircleFilledWhiteOutlinedIcon from "@material-ui/icons/PlayCircleFilledWhiteOutlined";
+import CreateOutlinedIcon from "@material-ui/icons/CreateOutlined";
+import KingBedOutlinedIcon from "@material-ui/icons/KingBedOutlined";
+import CheckOutlinedIcon from "@material-ui/icons/CheckOutlined";
 const Container = styled.div`
   flex: 1;
 `;
@@ -67,8 +72,9 @@ const FilterItem = styled.button`
   width: 15vw;
 
   &:focus {
-    border: red;
-    background-color: #9196ab;
+    border: none;
+    outline: none;
+    color: red;
   }
 `;
 
@@ -78,6 +84,9 @@ const DataContainer = styled.div`
   justify-content: center;
   &:hover {
     color: #9196ab;
+  }
+  &:focus {
+    color: blue;
   }
 `;
 const Total = styled.div`
@@ -105,9 +114,6 @@ const Text = styled.span`
 
 const Number = styled.span`
   color: #9196ab;
-  &:focus {
-    background-color: blue;
-  }
 `;
 
 const Dashboard: React.FC = () => {
@@ -117,7 +123,7 @@ const Dashboard: React.FC = () => {
     try {
       let res = await fetch(`https://api-d1-test.herokuapp.com/api/journey/`);
       let resJSON = await res.json();
-      console.log(resJSON);
+      // console.log(resJSON);
       setAllJouney(resJSON);
     } catch (e) {
       console.log(e);
@@ -128,7 +134,7 @@ const Dashboard: React.FC = () => {
     try {
       let res = await fetch(`https://api-d1-test.herokuapp.com/api/filter`);
       let resJSON = await res.json();
-      console.log(resJSON);
+      // console.log(resJSON);
       setFilter(resJSON);
     } catch (e) {
       console.log(e);
@@ -136,7 +142,6 @@ const Dashboard: React.FC = () => {
   }, []);
 
   const filterResults = useCallback(async (id) => {
-    console.log(id);
     try {
       if (id == 0) {
         getAllJourneys();
@@ -146,10 +151,30 @@ const Dashboard: React.FC = () => {
         `https://api-d1-test.herokuapp.com/api/journey/${id}`
       );
       let resJSON = await res.json();
-      console.log("Filter", resJSON);
+      // console.log("Filter", resJSON);
       setAllJouney(resJSON);
     } catch (e) {
       console.log(e);
+    }
+  }, []);
+
+  const icons = useCallback((id: any) => {
+    switch (id) {
+      case 0:
+        return <BorderAllOutlinedIcon />;
+      case 1:
+        return <SendOutlinedIcon />;
+      case 2:
+        return <PlayCircleFilledWhiteOutlinedIcon />;
+      case 3:
+        return <CreateOutlinedIcon />;
+      case 4:
+        return <KingBedOutlinedIcon />;
+      case 5:
+        return <CheckOutlinedIcon />;
+
+      default:
+        break;
     }
   }, []);
 
@@ -168,7 +193,7 @@ const Dashboard: React.FC = () => {
             {filter.map((item: any) => (
               <FilterItem key={item.id} onClick={() => filterResults(item.id)}>
                 <DataContainer>
-                  <AccessAlarmIcon />
+                  {icons(item.id)}
                   <Text>{item.name}</Text>
                 </DataContainer>
                 <Total>
