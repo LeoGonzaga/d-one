@@ -74,7 +74,6 @@ const FilterItem = styled.button`
   &:focus {
     border: none;
     outline: none;
-    color: red;
   }
 `;
 
@@ -83,7 +82,7 @@ const DataContainer = styled.div`
   align-items: center;
   justify-content: center;
   &:hover {
-    color: #9196ab;
+    color: blue;
   }
   &:focus {
     color: blue;

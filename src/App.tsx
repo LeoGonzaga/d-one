@@ -7,7 +7,7 @@ import DrawerLeft from "./Components/Drawer";
 function App() {
   return (
     <Router>
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", maxHeight: "100%", flexWrap: "wrap" }}>
         <DrawerLeft />
         <Switch>
           <Route path="/" exact>

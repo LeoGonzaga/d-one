@@ -20,8 +20,7 @@ const Container = styled.div`
   top: 0px;
   left: 0px;
   width: 71px;
-  max-height: 90%;
-  background: #1a1731 0% 0% no-repeat padding-box;
+   background: #1a1731 0% 0% no-repeat padding-box; */
 `;
 
 const Line = styled.div`
@@ -51,54 +50,83 @@ const ListPages = styled.ul`
 const ListItem = styled.li`
   margin-bottom: 10px;
 `;
+
+const DataContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+
+  &:hover {
+    color: #117eff;
+  }
+`;
 const DrawerLeft: React.FC = () => {
   return (
-    <>
-      <Container>
-        <Line></Line>
-        <Wrapper>
-          <D1Logo src={Logo} />
-          <ListPages>
-            <ListItem>
-              <PieChartIcon style={{ color: grey[50] }} />
-            </ListItem>
-            <ListItem>
-              <NavigationIcon style={{ color: grey[50] }} />
-            </ListItem>
-            <ListItem>
-              <PeopleIcon style={{ color: grey[50] }} />
-            </ListItem>
-            <ListItem>
-              <BackupIcon style={{ color: grey[50] }} />
-            </ListItem>
-            <ListItem>
-              <Line icon />
-            </ListItem>
-            <ListItem>
-              <TransitEnterexitOutlinedIcon style={{ color: grey[50] }} />
-            </ListItem>
-          </ListPages>
+    <Container>
+      <Line></Line>
+      <Wrapper>
+        <D1Logo src={Logo} />
+        <ListPages>
+          <ListItem>
+            <DataContainer>
+              <PieChartIcon />
+            </DataContainer>
+          </ListItem>
+          <ListItem>
+            <DataContainer>
+              <NavigationIcon />
+            </DataContainer>
+          </ListItem>
+          <ListItem>
+            <DataContainer>
+              <PeopleIcon />
+            </DataContainer>
+          </ListItem>
+          <ListItem>
+            <DataContainer>
+              <BackupIcon />
+            </DataContainer>
+          </ListItem>
+          <ListItem>
+            <Line icon />
+          </ListItem>
+          <ListItem>
+            <DataContainer>
+              <TransitEnterexitOutlinedIcon />
+            </DataContainer>
+          </ListItem>
+        </ListPages>
 
-          <ListPages>
-            <ListItem>
-              <MonetizationOnOutlinedIcon style={{ color: grey[50] }} />
-            </ListItem>
-            <ListItem>
-              <SettingsOutlinedIcon style={{ color: grey[50] }} />
-            </ListItem>
-            <ListItem>
-              <AccessAlarmIcon style={{ color: grey[50] }} />
-            </ListItem>
-            <ListItem>
-              <CompareArrowsIcon style={{ color: grey[50] }} />
-            </ListItem>
-            <ListItem>
-              <ExitToAppIcon style={{ color: grey[50] }} />
-            </ListItem>
-          </ListPages>
-        </Wrapper>
-      </Container>
-    </>
+        <ListPages>
+          <ListItem>
+            <DataContainer>
+              <MonetizationOnOutlinedIcon />
+            </DataContainer>
+          </ListItem>
+          <ListItem>
+            <DataContainer>
+              <SettingsOutlinedIcon />
+            </DataContainer>
+          </ListItem>
+          <ListItem>
+            <DataContainer>
+              <AccessAlarmIcon />
+            </DataContainer>
+          </ListItem>
+          <ListItem>
+            <DataContainer>
+              <CompareArrowsIcon />
+            </DataContainer>
+          </ListItem>
+          <ListItem>
+            <DataContainer>
+              <ExitToAppIcon />
+            </DataContainer>
+          </ListItem>
+        </ListPages>
+      </Wrapper>
+    </Container>
   );
 };
 
