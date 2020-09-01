@@ -45,6 +45,10 @@ const Search = styled.input`
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #cccfde;
+
+  &:hover {
+    box-shadow: 5px 5px 10px #cccfde;
+  }
 `;
 const Button = styled.button`
   background-color: #117eff;
@@ -53,6 +57,10 @@ const Button = styled.button`
   border-radius: 5px;
   border: none;
   color: #fff;
+  transition: 0.1s;
+  &:hover {
+    background-image: linear-gradient(to left, #25aae1, #00e1ff);
+  }
 `;
 const Navbar: React.FC = () => {
   return (

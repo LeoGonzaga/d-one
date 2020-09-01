@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useCallback } from "react";
 import styled from "styled-components";
 import Navbar from "../../Components/NavBar";
+import AccessAlarmIcon from "@material-ui/icons/AccessAlarm";
 import DashItem, { Card } from "./Components/DashItem/DashItem";
-
 const Container = styled.div`
   flex: 1;
 `;
@@ -13,7 +13,6 @@ const RowContainer = styled.div`
   max-width: 90%;
   justify-content: space-between;
   align-items: flex-start;
-  margin: 39px auto;
   padding: 50px;
 `;
 
@@ -34,8 +33,86 @@ const LabelContainer = styled.ul`
   margin: 10px;
 `;
 
+const ContainerName = styled.div`
+  flex: 0.4;
+`;
+const ContainerItem = styled.div`
+  display: flex;
+  flex: 0.6;
+  justify-content: space-between;
+`;
+
+const Item = styled.div`
+  width: 100px;
+  display: flex;
+  justify-content: center;
+`;
+
+const TitleFilter = styled.h2`
+  color: #3e4157;
+  text-align: left;
+`;
+
+const FilterContainer = styled.ul`
+  padding: 10px;
+  width: 15vw;
+`;
+const FilterItem = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  background-color: transparent;
+  border: none;
+  width: 15vw;
+
+  &:focus {
+    border: red;
+    background-color: #9196ab;
+  }
+`;
+
+const DataContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    color: #9196ab;
+  }
+`;
+const Total = styled.div`
+  height: 30px;
+  width: 30px;
+  background-color: #e4e6f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+
+  &:focus {
+    background-color: red;
+  }
+`;
+
+const Text = styled.span`
+  color: #3e4157;
+  margin-left: 5px;
+  font-size: 17px;
+  &:hover {
+    color: #9196ab;
+  }
+`;
+
+const Number = styled.span`
+  color: #9196ab;
+  &:focus {
+    background-color: blue;
+  }
+`;
+
 const Dashboard: React.FC = () => {
   const [allJouneys, setAllJouney] = useState([]);
+  const [filter, setFilter] = useState([]);
   const getAllJourneys = useCallback(async () => {
     try {
       let res = await fetch(`https://api-d1-test.herokuapp.com/api/journey/`);
@@ -47,8 +124,38 @@ const Dashboard: React.FC = () => {
     }
   }, []);
 
+  const getFilter = useCallback(async () => {
+    try {
+      let res = await fetch(`https://api-d1-test.herokuapp.com/api/filter`);
+      let resJSON = await res.json();
+      console.log(resJSON);
+      setFilter(resJSON);
+    } catch (e) {
+      console.log(e);
+    }
+  }, []);
+
+  const filterResults = useCallback(async (id) => {
+    console.log(id);
+    try {
+      if (id == 0) {
+        getAllJourneys();
+        return;
+      }
+      let res = await fetch(
+        `https://api-d1-test.herokuapp.com/api/journey/${id}`
+      );
+      let resJSON = await res.json();
+      console.log("Filter", resJSON);
+      setAllJouney(resJSON);
+    } catch (e) {
+      console.log(e);
+    }
+  }, []);
+
   useEffect(() => {
     getAllJourneys();
+    getFilter();
   }, []);
 
   return (
@@ -56,21 +163,38 @@ const Dashboard: React.FC = () => {
       <Navbar />
       <RowContainer>
         <JourneyContainer>
-          <h4>Jornadas</h4>
-          <ul>
-            <li>ALo</li>
-            <li>ALo</li>
-            <li>ALo</li>
-            <li>ALo</li>
-            <li>ALo</li>
-          </ul>
+          <TitleFilter>Jornadas</TitleFilter>
+          <FilterContainer>
+            {filter.map((item: any) => (
+              <FilterItem key={item.id} onClick={() => filterResults(item.id)}>
+                <DataContainer>
+                  <AccessAlarmIcon />
+                  <Text>{item.name}</Text>
+                </DataContainer>
+                <Total>
+                  <Number>{item.quantity}</Number>
+                </Total>
+              </FilterItem>
+            ))}
+          </FilterContainer>
         </JourneyContainer>
+
         <DashContainer>
           <LabelContainer>
-            <li>Nome</li>
-            <li>Destinatário</li>
-            <li>Sucesso</li>
-            <li>Status</li>
+            <ContainerName>
+              <li>Nome</li>
+            </ContainerName>
+            <ContainerItem>
+              <Item>
+                <li>Destinatário</li>
+              </Item>
+              <Item>
+                <li>Sucesso</li>
+              </Item>
+              <Item>
+                <li>Status</li>
+              </Item>
+            </ContainerItem>
           </LabelContainer>
           {allJouneys.map((item: Card) => (
             <DashItem

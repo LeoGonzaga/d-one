@@ -47,13 +47,17 @@ const DashItem: React.FC<Card> = (props) => {
   const statusItem = useCallback(() => {
     switch (props.status) {
       case 1:
-        return "Enviado";
+        return "Em execução";
       case 2:
-        return "Configurando";
+        return "Ativa";
       case 3:
+        return "Configurando";
+      case 4:
         return "Ociosa";
+      case 5:
+        return "Concluida";
       default:
-        return "Não definido no layout";
+        break;
     }
   }, []);
 

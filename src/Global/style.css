@@ -1,7 +1,8 @@
 body {
   padding: 0px;
   margin: 0px;
-  background-color: #FAFBFF;
+  background-color: #fafbff;
+  max-height: 100%;
 }
 
 ul {
@@ -9,8 +10,15 @@ ul {
   padding: 0px;
   margin: 0px;
 }
+li {
+  color: #9196ab;
+}
 
 ::-webkit-scrollbar {
   width: 0px;
-  background: transparent; /* make scrollbar transparent */
+  background: transparent;
+}
+
+a {
+  text-decoration: none;
 }

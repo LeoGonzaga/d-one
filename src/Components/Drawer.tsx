@@ -1,17 +1,31 @@
 import React from "react";
 import styled from "styled-components";
 import AccessAlarmIcon from "@material-ui/icons/AccessAlarm";
+import PieChartIcon from "@material-ui/icons/PieChart";
+import NavigationIcon from "@material-ui/icons/Navigation";
+import PeopleIcon from "@material-ui/icons/People";
+import BackupIcon from "@material-ui/icons/Backup";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import CompareArrowsIcon from "@material-ui/icons/CompareArrows";
+import SettingsOutlinedIcon from "@material-ui/icons/SettingsOutlined";
+import MonetizationOnOutlinedIcon from "@material-ui/icons/MonetizationOnOutlined";
+import TransitEnterexitOutlinedIcon from "@material-ui/icons/TransitEnterexitOutlined";
+import { green, grey } from "@material-ui/core/colors";
 import Logo from "../Assets/logo.png";
+
+interface Line {
+  icon?: boolean;
+}
 const Container = styled.div`
   top: 0px;
   left: 0px;
   width: 71px;
-  max-height: 100%;
+  max-height: 90%;
   background: #1a1731 0% 0% no-repeat padding-box;
 `;
 
 const Line = styled.div`
-  width: 71px;
+  width: ${(props: Line) => (props?.icon ? 30 : 71)};
   height: 3px;
   background: transparent linear-gradient(90deg, #00e1ff 0%, #117eff 100%) 0% 0%
     no-repeat padding-box;
@@ -46,40 +60,40 @@ const DrawerLeft: React.FC = () => {
           <D1Logo src={Logo} />
           <ListPages>
             <ListItem>
-              <AccessAlarmIcon color="primary" />
+              <PieChartIcon style={{ color: grey[50] }} />
             </ListItem>
             <ListItem>
-              <AccessAlarmIcon color="primary" />
+              <NavigationIcon style={{ color: grey[50] }} />
             </ListItem>
             <ListItem>
-              <AccessAlarmIcon color="primary" />
+              <PeopleIcon style={{ color: grey[50] }} />
             </ListItem>
             <ListItem>
-              <AccessAlarmIcon color="primary" />
+              <BackupIcon style={{ color: grey[50] }} />
             </ListItem>
             <ListItem>
-              <AccessAlarmIcon color="primary" />
+              <Line icon />
             </ListItem>
             <ListItem>
-              <AccessAlarmIcon color="primary" />
+              <TransitEnterexitOutlinedIcon style={{ color: grey[50] }} />
             </ListItem>
           </ListPages>
 
           <ListPages>
             <ListItem>
-              <AccessAlarmIcon color="primary" />
+              <MonetizationOnOutlinedIcon style={{ color: grey[50] }} />
             </ListItem>
             <ListItem>
-              <AccessAlarmIcon color="primary" />
+              <SettingsOutlinedIcon style={{ color: grey[50] }} />
             </ListItem>
             <ListItem>
-              <AccessAlarmIcon color="primary" />
+              <AccessAlarmIcon style={{ color: grey[50] }} />
             </ListItem>
             <ListItem>
-              <AccessAlarmIcon color="primary" />
+              <CompareArrowsIcon style={{ color: grey[50] }} />
             </ListItem>
             <ListItem>
-              <AccessAlarmIcon color="primary" />
+              <ExitToAppIcon style={{ color: grey[50] }} />
             </ListItem>
           </ListPages>
         </Wrapper>
