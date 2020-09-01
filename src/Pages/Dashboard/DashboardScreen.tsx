@@ -1,9 +1,16 @@
 import React from "react";
+import styled from "styled-components";
+import Navbar from "../../Components/NavBar";
 
-// import { Container } from './styles';
-
+const Container = styled.div`
+  flex: 1;
+`;
 const Dashboard: React.FC = () => {
-  return <div>Dash</div>;
+  return (
+    <Container>
+      <Navbar />
+    </Container>
+  );
 };
 
 export default Dashboard;

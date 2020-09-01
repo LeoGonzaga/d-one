@@ -40,8 +40,8 @@ const ListItem = styled.li`
 const DrawerLeft: React.FC = () => {
   return (
     <>
-      <Line></Line>
       <Container>
+        <Line></Line>
         <Wrapper>
           <D1Logo src={Logo} />
           <ListPages>

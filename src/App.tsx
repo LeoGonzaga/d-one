@@ -7,12 +7,14 @@ import DrawerLeft from "./Components/Drawer";
 function App() {
   return (
     <Router>
-      <DrawerLeft />
-      <Switch>
-        <Route path="/" exact>
-          {/* <Dashboard /> */}
-        </Route>
-      </Switch>
+      <div style={{ display: "flex" }}>
+        <DrawerLeft />
+        <Switch>
+          <Route path="/" exact>
+            <Dashboard />
+          </Route>
+        </Switch>
+      </div>
     </Router>
   );
 }
