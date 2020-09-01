@@ -8,6 +8,7 @@ import PlayCircleFilledWhiteOutlinedIcon from "@material-ui/icons/PlayCircleFill
 import CreateOutlinedIcon from "@material-ui/icons/CreateOutlined";
 import KingBedOutlinedIcon from "@material-ui/icons/KingBedOutlined";
 import CheckOutlinedIcon from "@material-ui/icons/CheckOutlined";
+import { purple, yellow, grey, blue, green } from "@material-ui/core/colors";
 const Container = styled.div`
   flex: 1;
 `;
@@ -74,6 +75,7 @@ const FilterItem = styled.button`
   &:focus {
     border: none;
     outline: none;
+    font-weight: bold;
   }
 `;
 
@@ -81,12 +83,6 @@ const DataContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  &:hover {
-    color: blue;
-  }
-  &:focus {
-    color: blue;
-  }
 `;
 const Total = styled.div`
   height: 30px;
@@ -96,10 +92,6 @@ const Total = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 15px;
-
-  &:focus {
-    background-color: red;
-  }
 `;
 
 const Text = styled.span`
@@ -107,7 +99,10 @@ const Text = styled.span`
   margin-left: 5px;
   font-size: 17px;
   &:hover {
-    color: #9196ab;
+    color: #117eff;
+  }
+  &:focus {
+    color: #117eff;
   }
 `;
 
@@ -157,20 +152,22 @@ const Dashboard: React.FC = () => {
     }
   }, []);
 
-  const icons = useCallback((id: any) => {
+  const icons = useCallback((id: number) => {
     switch (id) {
       case 0:
-        return <BorderAllOutlinedIcon />;
+        return <BorderAllOutlinedIcon style={{ color: purple[300] }} />;
       case 1:
-        return <SendOutlinedIcon />;
+        return <SendOutlinedIcon style={{ color: yellow[200] }} />;
       case 2:
-        return <PlayCircleFilledWhiteOutlinedIcon />;
+        return (
+          <PlayCircleFilledWhiteOutlinedIcon style={{ color: green[200] }} />
+        );
       case 3:
-        return <CreateOutlinedIcon />;
+        return <CreateOutlinedIcon style={{ color: blue[200] }} />;
       case 4:
-        return <KingBedOutlinedIcon />;
+        return <KingBedOutlinedIcon style={{ color: yellow[600] }} />;
       case 5:
-        return <CheckOutlinedIcon />;
+        return <CheckOutlinedIcon style={{ color: grey[400] }} />;
 
       default:
         break;
