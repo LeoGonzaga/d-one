@@ -11,6 +11,22 @@ const Container = styled.div`
   margin: 10px;
 `;
 
+const ContainerName = styled.div`
+  display: flex;
+  flex: 0.4;
+`;
+const ContainerItem = styled.div`
+  display: flex;
+  flex: 0.6;
+  justify-content: space-between;
+`;
+
+const Item = styled.div`
+  width: 100px;
+  display: flex;
+  justify-content: center;
+`;
+
 export interface Card {
   id?: string;
   name: string;
@@ -29,16 +45,26 @@ const DashItem: React.FC<Card> = (props) => {
       case 3:
         return "Ociosa";
       default:
-        break;
+        return "Não definido no layout";
     }
   }, []);
 
   return (
     <Container>
-      <h3>{props?.name}</h3>
-      <span>{props?.recipients}</span>
-      <span>{props?.success}</span>
-      <span>{statusItem()}</span>
+      <ContainerName>
+        <h4>{props?.name}</h4>
+      </ContainerName>
+      <ContainerItem>
+        <Item>
+          <span>{props?.recipients}</span>
+        </Item>
+        <Item>
+          <span>{props?.success}</span>
+        </Item>
+        <Item>
+          <span>{statusItem()}</span>
+        </Item>
+      </ContainerItem>
     </Container>
   );
 };
