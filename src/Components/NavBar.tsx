@@ -1,7 +1,21 @@
 import React from "react";
 import styled from "styled-components";
-import LogoImg from "../Assets/acme2.png";
 
+import LogoImg from "../Assets/acme2.png";
+import Tooltip from "@material-ui/core/Tooltip";
+import { withStyles, Theme, makeStyles } from "@material-ui/core/styles";
+import grey from "@material-ui/core/colors/grey";
+
+const DarkTooltip = withStyles((theme: Theme) => ({
+  tooltip: {
+    backgroundColor: "rgb(67, 63, 89)",
+    color: "rgba(255, 255, 255, 0.9)",
+    fontWeight: "bold",
+    boxShadow: theme.shadows[1],
+    fontSize: 15,
+    padding: 10,
+  },
+}))(Tooltip);
 export const Container = styled.div`
   display: flex;
   flex: 1;
@@ -67,7 +81,9 @@ const Navbar: React.FC = () => {
     <Container>
       <Infos>
         <NameContainer>
-          <Name>A</Name>
+          <DarkTooltip placement="left-end" title="Antônio da Silva" arrow>
+            <Name>A</Name>
+          </DarkTooltip>
         </NameContainer>
         <LogoContainer>
           <Logo src={LogoImg} />
