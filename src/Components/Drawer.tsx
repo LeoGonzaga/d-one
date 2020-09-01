@@ -10,8 +10,22 @@ import CompareArrowsIcon from "@material-ui/icons/CompareArrows";
 import SettingsOutlinedIcon from "@material-ui/icons/SettingsOutlined";
 import MonetizationOnOutlinedIcon from "@material-ui/icons/MonetizationOnOutlined";
 import TransitEnterexitOutlinedIcon from "@material-ui/icons/TransitEnterexitOutlined";
-import { green, grey } from "@material-ui/core/colors";
+import Tooltip from "@material-ui/core/Tooltip";
 import Logo from "../Assets/logo.png";
+
+import { withStyles, Theme, makeStyles } from "@material-ui/core/styles";
+import grey from "@material-ui/core/colors/grey";
+
+const LightTooltip = withStyles((theme: Theme) => ({
+  tooltip: {
+    backgroundColor: grey[50],
+    color: "rgba(1, 0, 0, 0.5)",
+    fontWeight: "bold",
+    boxShadow: theme.shadows[1],
+    fontSize: 15,
+    padding: 10,
+  },
+}))(Tooltip);
 
 interface Line {
   icon?: boolean;
@@ -48,7 +62,7 @@ const ListPages = styled.ul`
   padding-top: 60px;
 `;
 const ListItem = styled.li`
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 `;
 
 const DataContainer = styled.div`
@@ -56,7 +70,7 @@ const DataContainer = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
-
+  transition: 0.4;
   &:hover {
     color: #117eff;
   }
@@ -70,22 +84,30 @@ const DrawerLeft: React.FC = () => {
         <ListPages>
           <ListItem>
             <DataContainer>
-              <PieChartIcon />
+              <LightTooltip title="Análises" placement="left" arrow>
+                <PieChartIcon />
+              </LightTooltip>
             </DataContainer>
           </ListItem>
           <ListItem>
             <DataContainer>
-              <NavigationIcon />
+              <LightTooltip title="Jornadas" placement="left" arrow>
+                <NavigationIcon />
+              </LightTooltip>
             </DataContainer>
           </ListItem>
           <ListItem>
             <DataContainer>
-              <PeopleIcon />
+              <LightTooltip title="Clientes" placement="left" arrow>
+                <PeopleIcon />
+              </LightTooltip>
             </DataContainer>
           </ListItem>
           <ListItem>
             <DataContainer>
-              <BackupIcon />
+              <LightTooltip title="CCM Cloud" placement="left" arrow>
+                <BackupIcon />
+              </LightTooltip>
             </DataContainer>
           </ListItem>
           <ListItem>
@@ -93,7 +115,9 @@ const DrawerLeft: React.FC = () => {
           </ListItem>
           <ListItem>
             <DataContainer>
-              <TransitEnterexitOutlinedIcon />
+              <LightTooltip title="Versão 01" placement="left" arrow>
+                <TransitEnterexitOutlinedIcon />
+              </LightTooltip>
             </DataContainer>
           </ListItem>
         </ListPages>
@@ -101,27 +125,31 @@ const DrawerLeft: React.FC = () => {
         <ListPages>
           <ListItem>
             <DataContainer>
-              <MonetizationOnOutlinedIcon />
+              <LightTooltip title="Administração" placement="left" arrow>
+                <MonetizationOnOutlinedIcon />
+              </LightTooltip>
             </DataContainer>
           </ListItem>
           <ListItem>
             <DataContainer>
-              <SettingsOutlinedIcon />
+              <LightTooltip title="Help Desk" placement="left" arrow>
+                <SettingsOutlinedIcon />
+              </LightTooltip>
+            </DataContainer>
+          </ListItem>
+
+          <ListItem>
+            <DataContainer>
+              <LightTooltip title="Trocar Conta" placement="left" arrow>
+                <CompareArrowsIcon />
+              </LightTooltip>
             </DataContainer>
           </ListItem>
           <ListItem>
             <DataContainer>
-              <AccessAlarmIcon />
-            </DataContainer>
-          </ListItem>
-          <ListItem>
-            <DataContainer>
-              <CompareArrowsIcon />
-            </DataContainer>
-          </ListItem>
-          <ListItem>
-            <DataContainer>
-              <ExitToAppIcon />
+              <LightTooltip title="Sair" placement="left" arrow>
+                <ExitToAppIcon />
+              </LightTooltip>
             </DataContainer>
           </ListItem>
         </ListPages>
