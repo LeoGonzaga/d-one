@@ -1,21 +1,20 @@
 import React from "react";
 import styled from "styled-components";
-import AccessAlarmIcon from "@material-ui/icons/AccessAlarm";
-import PieChartIcon from "@material-ui/icons/PieChart";
-import NavigationIcon from "@material-ui/icons/Navigation";
-import PeopleIcon from "@material-ui/icons/People";
-import BackupIcon from "@material-ui/icons/Backup";
-import ExitToAppIcon from "@material-ui/icons/ExitToApp";
-import CompareArrowsIcon from "@material-ui/icons/CompareArrows";
-import SettingsOutlinedIcon from "@material-ui/icons/SettingsOutlined";
-import MonetizationOnOutlinedIcon from "@material-ui/icons/MonetizationOnOutlined";
-import TransitEnterexitOutlinedIcon from "@material-ui/icons/TransitEnterexitOutlined";
+
 import Tooltip from "@material-ui/core/Tooltip";
-import Logo from "../Assets/logo.png";
+import Logo from "../Assets/assets-complete/images/logotipo-branco.png";
 
 import { withStyles, Theme, makeStyles } from "@material-ui/core/styles";
 import grey from "@material-ui/core/colors/grey";
-
+import { ReactComponent as ChartPie } from "../Assets/assets-complete/icons/chart-pie.svg";
+import { ReactComponent as Rocket } from "../Assets/assets-complete/icons/rocket.svg";
+import { ReactComponent as UserFriends } from "../Assets/assets-complete/icons/user-friends.svg";
+import { ReactComponent as CCM } from "../Assets/assets-complete/icons/ccm-cloud.svg";
+import { ReactComponent as External } from "../Assets/assets-complete/icons/external-link-alt-solid.svg";
+import { ReactComponent as Gem } from "../Assets/assets-complete/icons/gem.svg";
+import { ReactComponent as Tools } from "../Assets/assets-complete/icons/tools.svg";
+import { ReactComponent as Chance } from "../Assets/assets-complete/icons/exchange-alt.svg";
+import { ReactComponent as Exit } from "../Assets/assets-complete/icons/sign-out-alt.svg";
 const LightTooltip = withStyles((theme: Theme) => ({
   tooltip: {
     backgroundColor: grey[50],
@@ -77,6 +76,61 @@ const DataContainer = styled.div`
     color: #117eff;
   }
 `;
+
+const PieChartIcon = styled(ChartPie)`
+  &:hover {
+    fill: #117eff;
+  }
+`;
+
+const RocketIcon = styled(Rocket)`
+  &:hover {
+    fill: #117eff;
+  }
+`;
+
+const UserFriendsIcon = styled(UserFriends)`
+  &:hover {
+    fill: #117eff;
+  }
+`;
+
+const CCMCloud = styled(CCM)`
+  &:hover {
+    fill: #117eff;
+  }
+`;
+
+const ExternalIcon = styled(External)`
+  &:hover {
+    fill: #117eff;
+  }
+`;
+
+const GemIcon = styled(Gem)`
+  &:hover {
+    fill: #117eff;
+  }
+`;
+
+const ToolsIcon = styled(Tools)`
+  &:hover {
+    fill: #117eff;
+  }
+`;
+
+const ChanceIcon = styled(Chance)`
+  &:hover {
+    fill: #117eff;
+  }
+`;
+
+const ExitIcon = styled(Exit)`
+  &:hover {
+    fill: #117eff;
+  }
+`;
+
 const DrawerLeft: React.FC = () => {
   return (
     <Container>
@@ -87,28 +141,28 @@ const DrawerLeft: React.FC = () => {
           <ListItem>
             <DataContainer>
               <LightTooltip title="Análises" placement="left" arrow>
-                <PieChartIcon />
+                <PieChartIcon fill="#fff" height="30" />
               </LightTooltip>
             </DataContainer>
           </ListItem>
           <ListItem>
             <DataContainer>
               <LightTooltip title="Jornadas" placement="left" arrow>
-                <NavigationIcon />
+                <RocketIcon fill="#fff" height="30" />
               </LightTooltip>
             </DataContainer>
           </ListItem>
           <ListItem>
             <DataContainer>
               <LightTooltip title="Clientes" placement="left" arrow>
-                <PeopleIcon />
+                <UserFriendsIcon fill="#fff" height="30" />
               </LightTooltip>
             </DataContainer>
           </ListItem>
           <ListItem>
             <DataContainer>
               <LightTooltip title="CCM Cloud" placement="left" arrow>
-                <BackupIcon />
+                <CCMCloud fill="#fff" height="30" />
               </LightTooltip>
             </DataContainer>
           </ListItem>
@@ -118,7 +172,7 @@ const DrawerLeft: React.FC = () => {
           <ListItem>
             <DataContainer>
               <LightTooltip title="Versão 01" placement="left" arrow>
-                <TransitEnterexitOutlinedIcon />
+                <ExternalIcon fill="#fff" height="30" />
               </LightTooltip>
             </DataContainer>
           </ListItem>
@@ -128,14 +182,14 @@ const DrawerLeft: React.FC = () => {
           <ListItem>
             <DataContainer>
               <LightTooltip title="Administração" placement="left" arrow>
-                <MonetizationOnOutlinedIcon />
+                <GemIcon fill="#fff" height="30" />
               </LightTooltip>
             </DataContainer>
           </ListItem>
           <ListItem>
             <DataContainer>
               <LightTooltip title="Help Desk" placement="left" arrow>
-                <SettingsOutlinedIcon />
+                <ToolsIcon fill="#fff" height="30" />
               </LightTooltip>
             </DataContainer>
           </ListItem>
@@ -143,14 +197,14 @@ const DrawerLeft: React.FC = () => {
           <ListItem>
             <DataContainer>
               <LightTooltip title="Trocar Conta" placement="left" arrow>
-                <CompareArrowsIcon />
+                <ChanceIcon fill="#fff" height="30" />
               </LightTooltip>
             </DataContainer>
           </ListItem>
           <ListItem>
             <DataContainer>
               <LightTooltip title="Sair" placement="left" arrow>
-                <ExitToAppIcon />
+                <ExitIcon fill="#fff" height="30" />
               </LightTooltip>
             </DataContainer>
           </ListItem>

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import LogoImg from "../Assets/acme2.png";
+import LogoImg from "../Assets/assets-complete/images/acme-logo.png";
 import Tooltip from "@material-ui/core/Tooltip";
 import {
   withStyles,
@@ -89,7 +89,7 @@ const Name = styled.span`
 const LogoContainer = styled.div`
   background: #fff;
   border: 1px solid #ebeef6;
-  padding: 0 10px;
+  padding: 0 5px;
   height: 35px;
 `;
 const Logo = styled.img`

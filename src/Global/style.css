@@ -1,7 +1,32 @@
+@font-face {
+  font-family: "Gotham-Bold";
+  font-weight: 500;
+  font-style: normal;
+  src: url("../Assets/assets-complete/fonts/Gotham-Bold.eot");
+  src: url("../Assets/assets-complete/fonts/Gotham-Bold.eot")
+      format("embedded-opentype"),
+    url("../Assets/assets-complete/fonts/Gotham-Bold.ttf") format("truetype"),
+    url("../Assets/assets-complete/fonts/Gotham-Bold.woff2") format("woff2"),
+    url("../Assets/assets-complete/fonts/Gotham-Bold.woff") format("woff"),
+    url("../Assets/assets-complete/fonts/Gotham-Bold.svg") format("svg");
+}
+@font-face {
+  font-family: "Gotham-Book";
+  font-weight: 300;
+  font-style: normal;
+  src: url("../Assets/assets-complete/fonts/Gotham-Book.eot");
+  src: url("../Assets/assets-complete/fonts/Gotham-Book.eot")
+      format("embedded-opentype"),
+    url("../Assets/assets-complete/fonts/Gotham-Book.ttf") format("truetype"),
+    url("../Assets/assets-complete/fonts/Gotham-Book.woff2") format("woff2"),
+    url("../Assets/assets-complete/fonts/Gotham-Book.woff") format("woff"),
+    url("../Assets/assets-complete/fonts/Gotham-Book.svg") format("svg");
+}
 body {
   padding: 0px;
   margin: 0px;
   background-color: #fafbff;
+  font-family: "Gotham";
 }
 
 ul {
