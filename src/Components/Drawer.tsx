@@ -141,28 +141,28 @@ const DrawerLeft: React.FC = () => {
           <ListItem>
             <DataContainer>
               <LightTooltip title="Análises" placement="left" arrow>
-                <PieChartIcon fill="#fff" height="30" />
+                <PieChartIcon fill="#fff" height="25" />
               </LightTooltip>
             </DataContainer>
           </ListItem>
           <ListItem>
             <DataContainer>
               <LightTooltip title="Jornadas" placement="left" arrow>
-                <RocketIcon fill="#fff" height="30" />
+                <RocketIcon fill="#fff" height="25" />
               </LightTooltip>
             </DataContainer>
           </ListItem>
           <ListItem>
             <DataContainer>
               <LightTooltip title="Clientes" placement="left" arrow>
-                <UserFriendsIcon fill="#fff" height="30" />
+                <UserFriendsIcon fill="#fff" height="25" />
               </LightTooltip>
             </DataContainer>
           </ListItem>
           <ListItem>
             <DataContainer>
               <LightTooltip title="CCM Cloud" placement="left" arrow>
-                <CCMCloud fill="#fff" height="30" />
+                <CCMCloud fill="#fff" height="25" />
               </LightTooltip>
             </DataContainer>
           </ListItem>
@@ -172,7 +172,7 @@ const DrawerLeft: React.FC = () => {
           <ListItem>
             <DataContainer>
               <LightTooltip title="Versão 01" placement="left" arrow>
-                <ExternalIcon fill="#fff" height="30" />
+                <ExternalIcon fill="#fff" height="25" />
               </LightTooltip>
             </DataContainer>
           </ListItem>
@@ -182,14 +182,14 @@ const DrawerLeft: React.FC = () => {
           <ListItem>
             <DataContainer>
               <LightTooltip title="Administração" placement="left" arrow>
-                <GemIcon fill="#fff" height="30" />
+                <GemIcon fill="#fff" height="25" />
               </LightTooltip>
             </DataContainer>
           </ListItem>
           <ListItem>
             <DataContainer>
               <LightTooltip title="Help Desk" placement="left" arrow>
-                <ToolsIcon fill="#fff" height="30" />
+                <ToolsIcon fill="#fff" height="25" />
               </LightTooltip>
             </DataContainer>
           </ListItem>
@@ -197,14 +197,14 @@ const DrawerLeft: React.FC = () => {
           <ListItem>
             <DataContainer>
               <LightTooltip title="Trocar Conta" placement="left" arrow>
-                <ChanceIcon fill="#fff" height="30" />
+                <ChanceIcon fill="#fff" height="25" />
               </LightTooltip>
             </DataContainer>
           </ListItem>
           <ListItem>
             <DataContainer>
               <LightTooltip title="Sair" placement="left" arrow>
-                <ExitIcon fill="#fff" height="30" />
+                <ExitIcon fill="#fff" height="25" />
               </LightTooltip>
             </DataContainer>
           </ListItem>

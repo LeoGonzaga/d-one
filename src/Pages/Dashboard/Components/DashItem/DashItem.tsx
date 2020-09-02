@@ -24,6 +24,7 @@ const ContainerName = styled.div`
 
 const Name = styled.h4`
   color: #3e4157;
+  font-family: "Gotham-Bold";
 `;
 const ContainerItem = styled.div`
   display: flex;
