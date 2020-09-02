@@ -54,6 +54,12 @@ const Item = styled.div`
   justify-content: center;
 `;
 
+const ItemIcon = styled.div`
+  width: 140px;
+  display: flex;
+  justify-content: center;
+`;
+
 const TitleFilter = styled.h2`
   color: #3e4157;
   text-align: left;
@@ -92,6 +98,9 @@ const Total = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 15px;
+  &:hover {
+    background-color: #117eff;
+  }
 `;
 
 const Text = styled.span`
@@ -99,10 +108,7 @@ const Text = styled.span`
   margin-left: 5px;
   font-size: 17px;
   &:hover {
-    color: #117eff;
-  }
-  &:focus {
-    color: #117eff;
+    color: #9196ab;
   }
 `;
 
@@ -212,9 +218,9 @@ const Dashboard: React.FC = () => {
               <Item>
                 <li>Sucesso</li>
               </Item>
-              <Item>
+              <ItemIcon>
                 <li>Status</li>
-              </Item>
+              </ItemIcon>
             </ContainerItem>
           </LabelContainer>
           {allJouneys.map((item: Card) => (

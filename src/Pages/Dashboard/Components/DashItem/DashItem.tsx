@@ -6,7 +6,7 @@ import PlayCircleFilledWhiteOutlinedIcon from "@material-ui/icons/PlayCircleFill
 import CreateOutlinedIcon from "@material-ui/icons/CreateOutlined";
 import KingBedOutlinedIcon from "@material-ui/icons/KingBedOutlined";
 import CheckOutlinedIcon from "@material-ui/icons/CheckOutlined";
-
+import { purple, yellow, grey, blue, green } from "@material-ui/core/colors";
 const Container = styled.div`
   display: flex;
   flex: 1;
@@ -34,6 +34,7 @@ const ContainerItem = styled.div`
 const Item = styled.div`
   width: 100px;
   display: flex;
+  opacity: 0.6;
   justify-content: center;
 `;
 
@@ -45,6 +46,7 @@ const Text = styled.span`
 const ItemIcon = styled.div`
   width: 140px;
   display: flex;
+  opacity: 0.6;
   text-align: left;
   align-items: center;
 `;
@@ -63,41 +65,42 @@ const DashItem: React.FC<Card> = (props) => {
       case 0:
         return (
           <ItemIcon>
-            <BorderAllOutlinedIcon /> <Text>Em execução</Text>
+            <BorderAllOutlinedIcon style={{ color: purple[300] }} />{" "}
+            <Text>Em execução</Text>
           </ItemIcon>
         );
       case 1:
         return (
           <ItemIcon>
-            <SendOutlinedIcon />
+            <SendOutlinedIcon style={{ color: yellow[200] }} />
             <Text>Ativa</Text>
           </ItemIcon>
         );
       case 2:
         return (
           <ItemIcon>
-            <PlayCircleFilledWhiteOutlinedIcon />
+            <PlayCircleFilledWhiteOutlinedIcon style={{ color: green[200] }} />
             <Text>Ativa</Text>
           </ItemIcon>
         );
       case 3:
         return (
           <ItemIcon>
-            <CreateOutlinedIcon />
+            <CreateOutlinedIcon style={{ color: blue[200] }} />
             <Text>Configurando</Text>
           </ItemIcon>
         );
       case 4:
         return (
           <ItemIcon>
-            <KingBedOutlinedIcon />
+            <KingBedOutlinedIcon style={{ color: yellow[600] }} />
             <Text>Ociosa</Text>
           </ItemIcon>
         );
       case 5:
         return (
           <ItemIcon>
-            <CheckOutlinedIcon />
+            <CheckOutlinedIcon style={{ color: grey[400] }} />
             <Text>Concluida</Text>
           </ItemIcon>
         );

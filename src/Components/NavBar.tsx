@@ -3,8 +3,51 @@ import styled from "styled-components";
 
 import LogoImg from "../Assets/acme2.png";
 import Tooltip from "@material-ui/core/Tooltip";
-import { withStyles, Theme, makeStyles } from "@material-ui/core/styles";
-import grey from "@material-ui/core/colors/grey";
+import {
+  withStyles,
+  Theme,
+  makeStyles,
+  createStyles,
+} from "@material-ui/core/styles";
+
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
+import Fade from "@material-ui/core/Fade";
+import { purple, yellow, grey, blue, green } from "@material-ui/core/colors";
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    modal: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      outline: "none",
+    },
+    paper: {
+      backgroundColor: theme.palette.background.paper,
+      padding: theme.spacing(2, 4, 3),
+      outline: "none",
+      borderRadius: 10,
+    },
+    column: {
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+    },
+    title: {
+      color: grey[700],
+    },
+    name: {
+      color: grey[700],
+      padding: 4,
+    },
+    subTitle: {
+      color: grey[500],
+      paddingTop: 1,
+    },
+  })
+);
 
 const DarkTooltip = withStyles((theme: Theme) => ({
   tooltip: {
@@ -61,7 +104,21 @@ const Search = styled.input`
   border: 1px solid #cccfde;
 
   &:hover {
-    box-shadow: 5px 5px 10px #cccfde;
+    box-shadow: 2px 2px 2px 1px #cccfde;
+  }
+  &:focus {
+    outline: none;
+  }
+`;
+
+const Input = styled.input`
+  width: 296px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #cccfde;
+
+  &:focus {
+    outline: none;
   }
 `;
 const Button = styled.button`
@@ -75,16 +132,30 @@ const Button = styled.button`
   &:hover {
     background-image: linear-gradient(to left, #25aae1, #00e1ff);
   }
+  &:focus {
+    outline: none;
+  }
 `;
 const Navbar: React.FC = () => {
+  const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <Container>
       <Infos>
-        <NameContainer>
-          <DarkTooltip placement="left-end" title="Antônio da Silva" arrow>
+        <DarkTooltip placement="left-end" title="Antônio da Silva" arrow>
+          <NameContainer>
             <Name>A</Name>
-          </DarkTooltip>
-        </NameContainer>
+          </NameContainer>
+        </DarkTooltip>
+
         <LogoContainer>
           <Logo src={LogoImg} />
         </LogoContainer>
@@ -92,10 +163,41 @@ const Navbar: React.FC = () => {
 
       <Action>
         <Search placeholder="Buscar" />
-        <Button>
+        <Button onClick={handleOpen}>
           + <span>Nova Jornada</span>
         </Button>
       </Action>
+
+      <Modal
+        aria-labelledby="transition-modal-title"
+        aria-describedby="transition-modal-description"
+        className={classes.modal}
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+      >
+        <Fade in={open}>
+          <div className={classes.paper}>
+            <h2 id="transition-modal-title" className={classes.title}>
+              Nova jornada
+            </h2>
+            <hr />
+            <div className={classes.column}>
+              <span className={classes.name}>
+                Dê um <strong>nome</strong> para essa Jornada
+              </span>
+              <Input placeholder="" />
+              <p className={classes.subTitle} id="transition-modal-description">
+                Você poderá alterar essa informação depois
+              </p>
+            </div>
+          </div>
+        </Fade>
+      </Modal>
     </Container>
   );
 };
