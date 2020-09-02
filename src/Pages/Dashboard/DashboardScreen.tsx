@@ -115,6 +115,7 @@ const Total = styled.div`
   border-radius: 15px;
   &:hover {
     background-color: #117eff;
+    color: #fff;
   }
 `;
 
@@ -129,6 +130,10 @@ const Text = styled.span`
 
 const Number = styled.span`
   color: #9196ab;
+  &:hover {
+    background-color: #117eff;
+    color: #fff;
+  }
 `;
 
 const Dashboard: React.FC = () => {
