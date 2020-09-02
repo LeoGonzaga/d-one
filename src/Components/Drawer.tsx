@@ -34,7 +34,7 @@ const Container = styled.div`
   top: 0px;
   left: 0px;
   width: 71px;
-   background: #1a1731 0% 0% no-repeat padding-box; */
+  background: #1a1731;
 `;
 
 const Line = styled.div`
@@ -51,6 +51,9 @@ const Wrapper = styled.div`
   max-width: 100%;
   align-items: center;
   justify-content: space-between;
+  @media (max-width: 800px) {
+    display: none;
+  }
 `;
 const D1Logo = styled.img`
   width: 40px;

@@ -11,6 +11,9 @@ import CheckOutlinedIcon from "@material-ui/icons/CheckOutlined";
 import { purple, yellow, grey, blue, green } from "@material-ui/core/colors";
 const Container = styled.div`
   flex: 1;
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
 const RowContainer = styled.div`
@@ -20,6 +23,9 @@ const RowContainer = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   padding: 50px;
+  @media (max-width: 800px) {
+    padding: 10;
+  }
 `;
 
 const JourneyContainer = styled.div``;
@@ -68,6 +74,9 @@ const TitleFilter = styled.h2`
 const FilterContainer = styled.ul`
   padding: 10px;
   width: 15vw;
+  @media (max-width: 800px) {
+    padding: 10;
+  }
 `;
 const FilterItem = styled.button`
   display: flex;
@@ -89,6 +98,10 @@ const DataContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 800px) {
+    justify-content: space-between;
+    margin-right: 20px;
+  }
 `;
 const Total = styled.div`
   height: 30px;
