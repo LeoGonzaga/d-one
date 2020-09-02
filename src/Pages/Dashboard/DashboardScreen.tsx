@@ -11,6 +11,8 @@ import CheckOutlinedIcon from "@material-ui/icons/CheckOutlined";
 import { purple, yellow, grey, blue, green } from "@material-ui/core/colors";
 const Container = styled.div`
   flex: 1;
+  height: 100vh;
+
   @media (max-width: 800px) {
     flex-direction: column;
   }
@@ -22,7 +24,7 @@ const RowContainer = styled.div`
   max-width: 90%;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 50px;
+  padding: 0px 50px;
   @media (max-width: 800px) {
     padding: 10;
   }

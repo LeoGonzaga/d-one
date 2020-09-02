@@ -31,8 +31,6 @@ interface Line {
   icon?: boolean;
 }
 const Container = styled.div`
-  top: 0px;
-  left: 0px;
   width: 71px;
   background: #1a1731;
 `;
@@ -47,6 +45,7 @@ const Line = styled.div`
 const Wrapper = styled.div`
   display: flex;
   flex: 1;
+
   flex-direction: column;
   max-width: 100%;
   align-items: center;
