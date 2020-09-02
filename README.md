@@ -11,4 +11,4 @@
 - Se preferir ver a execução já na internet, [clique aqui](https://d-one-teste.herokuapp.com/)
 
 
-![Screenshot](placeholder.jpeg)
+![Screenshot](image.jpeg)
